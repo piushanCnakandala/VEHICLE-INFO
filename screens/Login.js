@@ -21,12 +21,13 @@ export default function Login() {
            Register Now!
       </Link>
 
-      <Divider left="40px" w="80px" my="2" _light={{
+      <Divider mt="10%" left="40px" w="80px" my="2" _light={{
         bg: "muted.800"
       }} _dark={{
         bg: "muted.50"
       }} />
       <Text bottom="19px" left="150px"  fontSize="sm">Or continue with</Text>
+
       <Divider bottom="35px" left="280px" w="80px" my="2" _light={{
         bg: "muted.800"
       }} _dark={{

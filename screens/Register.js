@@ -1,6 +1,6 @@
 import { View } from 'react-native'
 import React from 'react'
-import {NativeBaseProvider ,Text,VStack,Input,Button,Link,HStack,Avatar,Center,Divider}from 'native-base'
+import {NativeBaseProvider ,Text,VStack,Input,Button,Image,Link,HStack,Avatar,Center,Divider}from 'native-base'
 
 export default function Register() {
   return (
@@ -29,6 +29,10 @@ export default function Register() {
       }} _dark={{
         bg: "muted.50"
       }} />
+
+<Image  left="90px" bottom="12px" size="50px"Thumbnail source= {require('./assets/img/google-logo.png')} alt="car logo" />
+            <Image  left="170px" bottom="59px" size="40px"Thumbnail source= {require('./assets/img/Facebook-logo.png')} alt="car logo" />
+            <Image  left="250px" bottom="109px" size="60px"Thumbnail source= {require('./assets/img/apple-logo.png')} alt="car logo" />
     </NativeBaseProvider>
   )
 }

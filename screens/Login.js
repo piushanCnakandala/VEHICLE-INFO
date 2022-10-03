@@ -1,8 +1,8 @@
 import { View } from 'react-native'
 import React from 'react'
-import {NativeBaseProvider ,Text,VStack,Input,Button,Link,HStack,Avatar,Center,Divider}from 'native-base'
+import {NativeBaseProvider ,Text,VStack,Input,Button,Link,HStack,Avatar,Center,Divider,Image}from 'native-base'
 
-export default function Login() {
+export default function Login({navigation}) {
   return (
     <NativeBaseProvider>
         <VStack space={4} alignItems="center" mt="20%">
@@ -17,7 +17,8 @@ export default function Login() {
            </VStack>
            <Text top="4px" left="37px" bold fontSize="xs">Don't have an account ?</Text>
           
-           <Link href="" bottom="13px" left="170px" bold fontSize="xs" color="indigo.400">
+           <Link href="" bottom="16px" left="170px" bold fontSize="xs" sExternal _text={{
+        color: "indigo.600"}} onPress={()=>{navigation.navigate("Register")}}>
            Register Now!
       </Link>
 
@@ -34,7 +35,11 @@ export default function Login() {
         bg: "muted.50"
       }} />
 
-      
+            <Image  left="90px" bottom="12px" size="50px"Thumbnail source= {require('./assets/img/google-logo.png')} alt="car logo" />
+            <Image  left="170px" bottom="59px" size="40px"Thumbnail source= {require('./assets/img/Facebook-logo.png')} alt="car logo" />
+            <Image  left="250px" bottom="109px" size="60px"Thumbnail source= {require('./assets/img/apple-logo.png')} alt="car logo" />
+    
+
     </NativeBaseProvider>
   )
 

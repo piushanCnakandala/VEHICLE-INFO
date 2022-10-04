@@ -1,10 +1,12 @@
-import { View } from 'react-native'
+import { View,StyleSheet } from 'react-native'
 import React from 'react'
 import {NativeBaseProvider ,Text,VStack,Input,Button,Link,HStack,Avatar,Center,Divider,Image}from 'native-base'
 
 export default function Login({navigation}) {
   return (
+    <View style={styles.container}>
     <NativeBaseProvider>
+      
         <VStack space={4} alignItems="center" mt="20%">
         <Text bold fontSize="3xl" color="indigo.600">Welcome !</Text>
 
@@ -15,12 +17,13 @@ export default function Login({navigation}) {
         <Button mt="5%" w="50%" h="10%" backgroundColor="indigo.600" borderRadius="20" size="sm">Login</Button>
         
            </VStack>
-           <Text top="4px" left="37px" bold fontSize="xs">Don't have an account ?</Text>
+           <Text top="4px" left="77px" bold fontSize="xs">Don't have an account ?</Text>
           
-           <Link href="" bottom="16px" left="170px" bold fontSize="xs" sExternal _text={{
+           <Link href="" bottom="16px" left="218px" bold fontSize="xs" sExternal _text={{
         color: "indigo.600"}} onPress={()=>{navigation.navigate("Register")}}>
            Register Now!
       </Link>
+      
 
       <Divider mt="10%" left="40px" w="80px" my="2" _light={{
         bg: "muted.800"
@@ -38,9 +41,16 @@ export default function Login({navigation}) {
             <Image  left="90px" bottom="12px" size="50px"Thumbnail source= {require('./assets/img/google-logo.png')} alt="car logo" />
             <Image  left="170px" bottom="59px" size="40px"Thumbnail source= {require('./assets/img/Facebook-logo.png')} alt="car logo" />
             <Image  left="250px" bottom="109px" size="60px"Thumbnail source= {require('./assets/img/apple-logo.png')} alt="car logo" />
-    
+            
 
     </NativeBaseProvider>
+    </View>
   )
 
 }
+
+const styles =StyleSheet.create({
+  container:{
+    flex: 1,
+  }
+})

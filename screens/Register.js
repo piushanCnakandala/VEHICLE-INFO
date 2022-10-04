@@ -34,6 +34,12 @@ export default function Register() {
 <Image  left="90px" bottom="12px" size="50px"Thumbnail source= {require('./assets/img/google-logo.png')} alt="car logo" />
             <Image  left="170px" bottom="59px" size="40px"Thumbnail source= {require('./assets/img/Facebook-logo.png')} alt="car logo" />
             <Image  left="250px" bottom="103px" size="46px"Thumbnail source= {require('./assets/img/apple-logo.png')} alt="car logo" />
+
+            <Text bottom="70px" left="80px" fontSize="xs">By creating an account, you agree to the </Text>
+            <Text bottom="70px" left="27px" color="indigo.600" fontSize="xs">VehicleInfo.com Free Membership Agreement </Text>
+            <Text bottom="88px" left="276px" fontSize="xs">and </Text>
+            <Text bottom="106px" left="301px" color="indigo.600" fontSize="xs">Privacy Policy </Text>
+            
     </NativeBaseProvider>
     </View>
   )

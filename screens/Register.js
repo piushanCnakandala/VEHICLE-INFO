@@ -1,9 +1,10 @@
-import { View } from 'react-native'
+import { View ,StyleSheet} from 'react-native'
 import React from 'react'
 import {NativeBaseProvider ,Text,VStack,Input,Button,Image,Link,HStack,Avatar,Center,Divider}from 'native-base'
 
 export default function Register() {
   return (
+    <View style={styles.container}>
     <NativeBaseProvider>
         <VStack space={4} alignItems="center" mt="10%">
         <Text bold fontSize="3xl" color="indigo.600">Register</Text>
@@ -34,5 +35,12 @@ export default function Register() {
             <Image  left="170px" bottom="59px" size="40px"Thumbnail source= {require('./assets/img/Facebook-logo.png')} alt="car logo" />
             <Image  left="250px" bottom="109px" size="60px"Thumbnail source= {require('./assets/img/apple-logo.png')} alt="car logo" />
     </NativeBaseProvider>
+    </View>
   )
 }
+
+const styles =StyleSheet.create({
+  container:{
+    flex: 1,
+  }
+})

@@ -33,7 +33,7 @@ export default function Register() {
 
 <Image  left="90px" bottom="12px" size="50px"Thumbnail source= {require('./assets/img/google-logo.png')} alt="car logo" />
             <Image  left="170px" bottom="59px" size="40px"Thumbnail source= {require('./assets/img/Facebook-logo.png')} alt="car logo" />
-            <Image  left="250px" bottom="109px" size="60px"Thumbnail source= {require('./assets/img/apple-logo.png')} alt="car logo" />
+            <Image  left="250px" bottom="103px" size="46px"Thumbnail source= {require('./assets/img/apple-logo.png')} alt="car logo" />
     </NativeBaseProvider>
     </View>
   )

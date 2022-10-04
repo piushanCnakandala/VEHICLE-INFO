@@ -3,7 +3,7 @@ import {React,useEffect,useState}  from  'react'
 import { NativeBaseProvider, Center, Fab,Image } from "native-base";
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-export default function Home() {
+export default function Home({navigation}) {
 
     const [posts,setPosts] =useState([]);
 
@@ -15,8 +15,8 @@ export default function Home() {
 
   return (
     <NativeBaseProvider>
-   <Fab renderInPortal={false} shadow={2} size="sm" icon={<Ionicons color="white" name={"add-sharp"} size={18}/>} />
-   {/* <Fab renderInPortal={false} shadow={2} size="sm" icon={<Icon color="white" as={AntDesign} name="plus" size="sm" />} /> */}
+   <Fab onPress={()=>{navigation.navigate("AddNewVehicleInfo")}} renderInPortal={false} shadow={2} size="sm" icon={<Ionicons color="white" name={"add-sharp"} size={18}/>} />
+   
     <Center>
     <View style={styles.container}>
        <FlatList

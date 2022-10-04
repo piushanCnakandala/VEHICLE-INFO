@@ -1,6 +1,6 @@
 import { View, Text,StyleSheet,FlatList,TouchableOpacity } from 'react-native'
 import {React,useEffect,useState}  from  'react'
-import { NativeBaseProvider, Center, Fab } from "native-base";
+import { NativeBaseProvider, Center, Fab,Image } from "native-base";
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <NativeBaseProvider>
-   <Fab color="red" renderInPortal={false} shadow={2} size="sm" icon={<Ionicons color="white" name={"add-sharp"} size={18}/>} />
+   <Fab renderInPortal={false} shadow={2} size="sm" icon={<Ionicons color="white" name={"add-sharp"} size={18}/>} />
    {/* <Fab renderInPortal={false} shadow={2} size="sm" icon={<Icon color="white" as={AntDesign} name="plus" size="sm" />} /> */}
     <Center>
     <View style={styles.container}>
@@ -23,8 +23,9 @@ export default function Home() {
                 data={posts}
                 renderItem={({ item }) =>
                     <TouchableOpacity style={{borderWidth:3, borderRadius:10, marginBottom:5,borderColor:'#7d5fff', padding:5}} onPress={()=>{console.log("hello");}}>
-                        <Text style={{marginBottom:10, color:'red', fontWeight:'bold'}} >{item.title}</Text>
+                        <Text style={{marginBottom:10, color:'#30336b', fontWeight:'bold'}} >{item.title}</Text>
                         <Text style={{marginBottom:10}} >{item.body}</Text>
+                        <Image  left="10px" bottom="12px" size="80px"Thumbnail source= {require('./assets/img/google-logo.png')} alt="car logo" />
                     </TouchableOpacity>
                 }
             />

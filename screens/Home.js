@@ -16,7 +16,7 @@ export default function Home() {
        <FlatList
                 data={posts}
                 renderItem={({ item }) =>
-                    <TouchableOpacity style={{borderWidth:1,backgroundColor:indigo, marginBottom:'5%', padding:5}} onPress={()=>{console.log("hello");}}>
+                    <TouchableOpacity style={{borderWidth:1, marginBottom:'5%', padding:5}} onPress={()=>{console.log("hello");}}>
                         <Text style={{marginBottom:10,fontWeight:'bold'}} >{item.title}</Text>
                         <Text style={{marginBottom:10}} >{item.body}</Text>
                     </TouchableOpacity>

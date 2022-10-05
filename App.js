@@ -5,10 +5,12 @@ import Register from './screens/Register';
 import Home from './screens/Home';
 import AddNewVehicleInfo from './screens/AddNewVehicleInfo';
 import VehicleInfo from './screens/VehicleInfo';
+import Update from './screens/Update';
 
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+
 
 
 
@@ -28,6 +30,7 @@ export default function App() {
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="AddNewVehicleInfo" component={AddNewVehicleInfo} />
         <Stack.Screen name="VehicleInfo" component={VehicleInfo} />
+        <Stack.Screen name="Update" component={Update} />
       
     </Stack.Navigator>
     </NavigationContainer>

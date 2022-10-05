@@ -1,6 +1,6 @@
 import { View,StyleSheet } from 'react-native'
 import React from 'react'
-import {NativeBaseProvider ,Text,VStack,Input,Button,Link,HStack,Avatar,Center,Divider,Image}from 'native-base'
+import {NativeBaseProvider ,Text,VStack,Input,Button,Link,Divider,Image}from 'native-base'
 
 export default function Login({navigation}) {
   return (

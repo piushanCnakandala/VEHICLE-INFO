@@ -22,7 +22,7 @@ export default function Home({navigation}) {
        <FlatList
                 data={posts}
                 renderItem={({ item }) =>
-                    <TouchableOpacity style={{borderWidth:3, borderRadius:10, marginBottom:5,borderColor:'#7d5fff', padding:5}} onPress={()=>{console.log("hello");}}>
+                    <TouchableOpacity style={{borderWidth:3, borderRadius:10, marginBottom:5,borderColor:'#7d5fff', padding:5}} onPress={()=>{navigation.navigate("VehicleInfo")}}>
                         <Text style={{marginBottom:10, color:'#30336b', fontWeight:'bold'}} >{item.title}</Text>
                         <Text style={{marginBottom:10}} >{item.body}</Text>
                         <Image  left="10px" bottom="12px" size="80px"Thumbnail source= {require('./assets/img/google-logo.png')} alt="car logo" />

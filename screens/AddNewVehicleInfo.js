@@ -3,7 +3,7 @@ import React from 'react'
 import {NativeBaseProvider ,Text,VStack,Input,Button,Link,Divider,Image,Box}from 'native-base'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-export default function AddNewVehicleInfo() {
+export default function AddNewVehicleInfo({navigation}) {
   return (
     <View style={styles.container}>
      <NativeBaseProvider>
@@ -25,7 +25,7 @@ export default function AddNewVehicleInfo() {
         <Input  bottom="5" w="80%" variant="underlined" placeholder="Enter Registation Number" />
         <Text top="-23px" left="-100" bold fontSize="sm" color="indigo.400">Other Infomation</Text>
         <Input bottom="79" w="80%" h="20%" variant="underlined" placeholder="Enter Other Infomation" />
-        <Button mt="0%" w="50%" h="8%" backgroundColor="indigo.600" borderRadius="20" size="sm">Save</Button>
+        <Button mt="0%" w="50%" h="8%" backgroundColor="indigo.600" borderRadius="20" size="sm" onPress={()=>{navigation.navigate("Home")}}>Save</Button>
 
      </VStack>
       </NativeBaseProvider> 

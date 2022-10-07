@@ -8,7 +8,7 @@ export default function Update({navigation}) {
     <View style={styles.container}>
      <NativeBaseProvider>
      <VStack space={4} alignItems="center" mt="10%">
-     <Text bold fontSize="xl" color="indigo.600">Add New Vehicle Infomaion</Text>
+     <Text bold fontSize="xl" color="indigo.600">Update Vehicle Infomaion</Text>
 
      <Box mt="5%" height="20%" width="50%" alignSelf="center" borderWidth="2" borderColor="indigo.400" borderRadius="20" _text={{
       fontSize: "md",

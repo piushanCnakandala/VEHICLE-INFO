@@ -28,3 +28,4 @@ router.post('/',async(req,res)=>{
         res.send("Err : " + err)
     }
 })
+module.exports = router

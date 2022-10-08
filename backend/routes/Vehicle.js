@@ -24,7 +24,6 @@ router.post('/', async (req, res) => {
         res.send('error :' + e)
     }
 })
-
 router.put('/', async (req, res) => {
     try {
         const vehicles = await Vehicle.find();
@@ -43,6 +42,22 @@ router.put('/', async (req, res) => {
         res.send('error :' + e)
     }
 })
+router.delete('/', async (req, res) => {
+    try {
+        const vehicles = await Vehicle.find();
+        for (const v of vehicles) {
+            if (req.body.vehicleRegistrationNumber === v.vehicleRegistrationNumber) {
+                const dlt = await vehicles.findById(v._id);
 
+                const response = await dlt.remove();
+                res.send(response)
+            }
+        }
+    } catch (e) {
+        res.send('error :' + e)
+    }
+})
+
+module.exports = router;
 
 

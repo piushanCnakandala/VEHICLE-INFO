@@ -1,24 +1,24 @@
 const express = require('express');
 const router = express.Router();
 
-const Car = require('../model/vehicle.model');
+const Vehicle = require('../model/vehicle.model');
 
 router.get('/', async (req, res) => {
     try {
-        const response = await Car.find();
+        const response = await Vehicle.find();
         res.json(response)
     } catch (e) {
         res.send('error :' + e)
     }
 })
 router.post('/', async (req, res) => {
-    const cars = new Car({
-        regNo: req.body.regNo,
-        description: req.body.description,
-        brandName: req.body.brandName
+    const vehicles = new Vehicle({
+        vehicleRegistrationNumber: req.body.vehicleRegistrationNumber,
+        otherDetails: req.body.otherDetails,
+        vehicleBrand: req.body.vehicleBrand
     })
     try {
-        const response = await cars.save();
+        const response = await vehicles.save();
         res.json(response)
     } catch (e) {
         res.send('error :' + e)
@@ -27,14 +27,14 @@ router.post('/', async (req, res) => {
 
 router.put('/', async (req, res) => {
     try {
-        const cars = await Car.find();
-        for (const c of cars) {
-            if (req.body.regNo === c.regNo) {
-                const car = await Car.findById(c._id)
-                car.regNo = req.body.regNo;
-                car.description = req.body.description;
-                car.brandName = req.body.brandName;
-                const response = await car.save();
+        const vehicles = await Vehicle.find();
+        for (const c of vehicles) {
+            if (req.body.vehicleRegistrationNumber === c.vehicleRegistrationNumber) {
+                const vehicle = await Vehicle.findById(c._id)
+                vehicle.vehicleRegistrationNumber = req.body.vehicleRegistrationNumber;
+                vehicle.otherDetails = req.body.otherDetails;
+                vehicle.vehicleBrand = req.body.vehicleBrand;
+                const response = await vehicle.save();
                 res.send(response)
             }
         }

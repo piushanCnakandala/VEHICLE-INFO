@@ -8,7 +8,7 @@ export default function VehicleInfo({navigation}) {
     <View style={styles.container}>
       <NativeBaseProvider>
       <Fab onPress={()=>{navigation.navigate("VehicleInfo")}} renderInPortal={false} shadow={2} bottom={90}  size="sm" icon={<Ionicons color="white" name={"create-outline"} size={18} onPress={()=>{navigation.navigate("Update")}}/>} />
-      <Fab onPress={()=>{navigation.navigate("VehicleInfo")}} renderInPortal={false} shadow={2}  size="sm" icon={<Ionicons color="white" name={"trash-outline"} size={18} />} />
+      <Fab onPress={()=>{navigation.navigate("VehicleInfo")}} renderInPortal={false} shadow={2}  size="sm" icon={<Ionicons color="white" name={"trash-outline"} size={18} onPress={()=>{navigation.navigate("Home")}} />} />
       
 
      <VStack space={4} alignItems="center" mt="10%">

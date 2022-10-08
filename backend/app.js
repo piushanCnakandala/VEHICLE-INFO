@@ -1,8 +1,20 @@
-const express =require('express');
-const app =express();
+const express=require('express');
+const mongoose = require('mongoose');
 
-const port =4000;
+const app=express();
+const port=4000;
 
-app.listen(port,(req,res)=>{
-    console.log('Express app Listening on port  ${port}');
-})
+const url='mongodb://127.0.0.1/express';
+mongoose.connect(url,{useNewUrlParser:true});
+
+const con =mongoose.connection;
+
+con.on("open",()=>{
+    console.log("mongodb connected");
+});
+
+app.use(express.json());
+
+app.listen(port,()=>{
+    console.log(`starting on ${port}`);
+});

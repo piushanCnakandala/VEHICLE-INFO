@@ -25,4 +25,24 @@ router.post('/', async (req, res) => {
     }
 })
 
+router.put('/', async (req, res) => {
+    try {
+        const cars = await Car.find();
+        for (const c of cars) {
+            if (req.body.regNo === c.regNo) {
+                const car = await Car.findById(c._id)
+                car.regNo = req.body.regNo;
+                car.description = req.body.description;
+                car.brandName = req.body.brandName;
+                const response = await car.save();
+                res.send(response)
+            }
+        }
+
+    } catch (e) {
+        res.send('error :' + e)
+    }
+})
+
+
 

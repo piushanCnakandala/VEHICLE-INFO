@@ -3,6 +3,8 @@ import React from 'react'
 import {NativeBaseProvider ,Text,VStack,Input,Button,Image,Link,HStack,Avatar,Center,Divider}from 'native-base'
 
 export default function Register() {
+
+
   return (
     <View style={styles.container}>
     <NativeBaseProvider>
@@ -39,7 +41,7 @@ export default function Register() {
             <Text bottom="70px" left="27px" color="indigo.600" fontSize="xs">VehicleInfo.com Free Membership Agreement </Text>
             <Text bottom="88px" left="276px" fontSize="xs">and </Text>
             <Text bottom="106px" left="301px" color="indigo.600" fontSize="xs">Privacy Policy </Text>
-            
+
     </NativeBaseProvider>
     </View>
   )

@@ -16,9 +16,9 @@ export default function AddNewVehicleInfo({navigation}) {
     fetch('http://192.168.1.3:4000/vehicle',{
       method:'POST',
       body:JSON.stringify({
-        vehicleBrandNmae:vehicleBrandNmae,
-        registerNumber:registerNumber,
-        otherDeatils:otherDeatils
+        vehicleBrand:vehicleBrandNmae,
+        vehicleRegistrationNumber:registerNumber,
+        otherDetails:otherDeatils
       }),
       headers: {
           'Content-type': 'application/json; charset=UTF-8',
@@ -27,7 +27,7 @@ export default function AddNewVehicleInfo({navigation}) {
     })
 
     .then((response) => {
-      
+
       Alert.alert("Vehicle Saved Successfully !")
     })
     .catch((err)=>{Alert.alert("Error occured !")})

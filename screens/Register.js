@@ -1,9 +1,34 @@
 import { View ,StyleSheet} from 'react-native'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {NativeBaseProvider ,Text,VStack,Input,Button,Image,Link,HStack,Avatar,Center,Divider}from 'native-base'
 
 export default function Register() {
+  const [userName,setuserName]=useState('');
+  const [email,setemail]=useState('');
+  const [password,setpassword]=useState('');
 
+  
+  const saveData=()=>{
+    console.log(userName , email , password)
+    fetch('http://192.168.1.3:4000/user',{
+      method:'POST',
+      body:JSON.stringify({
+        userName:userName,
+        email:email,
+        password:password
+      }),
+      headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+      }
+
+    })
+
+    .then((response) => {
+      
+      Alert.alert(" Registerd Successfully !")
+    })
+    .catch((err)=>{Alert.alert("Error occured !")})
+  }
 
   return (
     <View style={styles.container}>
@@ -12,12 +37,21 @@ export default function Register() {
         <Text bold fontSize="3xl" color="indigo.600">Register</Text>
 
         <Text top="40px" marginRight="62%" bold fontSize="sm" color="indigo.400">User Name</Text>
-        <Input  mt="6%" w="80%" variant="underlined" placeholder="Enter User Name" />
+        <Input  mt="6%" w="80%" variant="underlined" placeholder="Enter User Name"  value={userName}
+                onChangeText={(e)=>{
+                  setuserName(e)
+                }}/>
         <Text top="20px" marginRight="71%" bold fontSize="sm" color="indigo.400">Email</Text>
-        <Input w="80%" variant="underlined" placeholder="Enter Email" />
+        <Input w="80%" variant="underlined" placeholder="Enter Email"  value={email}
+                onChangeText={(e)=>{
+                  setemail(e)
+                }}/>
         <Text top="20px" marginRight="65%" bold fontSize="sm" color="indigo.400">Password</Text>
-        <Input w="80%" variant="underlined" placeholder="Enter Password" />
-        <Button mt="5%" w="50%" h="10%" backgroundColor="indigo.600" borderRadius="20" size="sm">Create account</Button>
+        <Input w="80%" variant="underlined" placeholder="Enter Password"  value={password}
+                onChangeText={(e)=>{
+                  setpassword(e)
+                }}/>
+        <Button mt="5%" w="50%" h="10%" backgroundColor="indigo.600" borderRadius="20" size="sm" onPress={saveData}>Create account</Button>
         </VStack>
 
         <Divider mt="10%" left="40px" w="80px" my="2" _light={{

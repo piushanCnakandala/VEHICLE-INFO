@@ -64,7 +64,10 @@ export default function AddNewVehicleInfo({navigation}) {
                 onChangeText={(e)=>{
                   setotherDeatils(e)
                 }}/>
-        <Button mt="0%" w="50%" h="8%" backgroundColor="indigo.600" borderRadius="20" size="sm" onPress={saveData}>Save</Button>
+        <Button mt="0%" w="50%" h="8%" backgroundColor="indigo.600" borderRadius="20" size="sm" onPress={(e)=>{
+                                saveData()
+                                clear()
+                              }}>Save</Button>
 
      </VStack>
       </NativeBaseProvider> 

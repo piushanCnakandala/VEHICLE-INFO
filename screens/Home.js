@@ -8,7 +8,7 @@ export default function Home({navigation}) {
     const [posts,setPosts] =useState([]);
 
     useEffect(() => {
-        fetch('https://jsonplaceholder.typicode.com/posts?_limit=8')
+        fetch('http://192.168.1.3:4000/vehicle')
             .then((response) => response.json())
             .then((json) => setPosts(json));
     })
@@ -22,9 +22,9 @@ export default function Home({navigation}) {
        <FlatList
                 data={posts}
                 renderItem={({ item }) =>
-                    <TouchableOpacity style={{borderWidth:3, borderRadius:10, marginBottom:5,borderColor:'#7d5fff', padding:5}} onPress={()=>{navigation.navigate("VehicleInfo")}}>
-                        <Text style={{marginBottom:10, color:'#30336b', fontWeight:'bold'}} >{item.title}</Text>
-                        <Text style={{marginBottom:10}} >{item.body}</Text>
+                    <TouchableOpacity style={{borderWidth:3, borderRadius:10, marginBottom:5,borderColor:'#7d5fff', padding:5,width:350,height:150}} onPress={()=>{navigation.navigate("VehicleInfo",{obj:item})}}>
+                        <Text style={{marginBottom:10, color:'#30336b', fontWeight:'bold'}} >{item.vehicleBrand}</Text>
+                        <Text style={{marginBottom:10}} >{item.vehicleRegistrationNumber}</Text>
                         <Image  left="10px" bottom="12px" size="80px"Thumbnail source= {require('./assets/img/google-logo.png')} alt="car logo" />
                     </TouchableOpacity>
                 }

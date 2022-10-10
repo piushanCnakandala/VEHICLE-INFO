@@ -1,9 +1,20 @@
 import { View,StyleSheet } from 'react-native'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {NativeBaseProvider ,Text,VStack,Input,Button,Link,Divider,Image ,Fab,Box}from 'native-base'
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-export default function VehicleInfo({navigation}) {
+export default function VehicleInfo({navigation,route}) {
+
+  const [vehicleBrand,setvehicleBrandNmae]=useState('');
+  const [vehicleRegistrationNumber,setregisterNumber]=useState('');
+
+
+    useEffect(() => {
+      setvehicleBrandNmae(route.params.obj.vehicleBrand)
+      setregisterNumber(route.params.obj.vehicleRegistrationNumber)
+    })
+
+
   return (
     <View style={styles.container}>
       <NativeBaseProvider>
@@ -12,7 +23,7 @@ export default function VehicleInfo({navigation}) {
       
 
      <VStack space={4} alignItems="center" mt="10%">
-     <Text bold fontSize="xl" color="indigo.600">Add New Vehicle Infomaion</Text>
+     <Text bold fontSize="xl" color="indigo.600"> Vehicle Infomaion</Text>
 
      <Box mt="5%" height="20%" width="50%" alignSelf="center" borderWidth="2" borderColor="indigo.400" borderRadius="20" _text={{
       fontSize: "md",
@@ -22,9 +33,15 @@ export default function VehicleInfo({navigation}) {
     }}></Box>
     
         <Text top="10px" left="-92" bold fontSize="sm" color="indigo.400">Vehicle Brand Name</Text>
-        <Input  bottom="2" w="80%" variant="underlined" placeholder="Vehicle Brand Name" />
+        <Input  bottom="2" w="80%" variant="underlined" placeholder="Vehicle Brand Name" value={vehicleBrand}
+                onChangeText={(e)=>{
+                  setvehicleBrandNmae(e)
+                }} />
         <Text top="0px" left="-92" bold fontSize="sm" color="indigo.400">Registation Number</Text>
-        <Input  bottom="5" w="80%" variant="underlined" placeholder="Enter Registation Number" />
+        <Input  bottom="5" w="80%" variant="underlined" placeholder="Enter Registation Number"   value={vehicleRegistrationNumber}
+                onChangeText={(e)=>{
+                  setregisterNumber(e)
+                }}/>
         <Text top="-23px" left="-100" bold fontSize="sm" color="indigo.400">Other Infomation</Text>
         <Input bottom="79" w="80%" h="20%" variant="underlined" placeholder="Enter Other Infomation" />
         
